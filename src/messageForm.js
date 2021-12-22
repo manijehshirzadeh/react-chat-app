@@ -11,9 +11,7 @@ function MessageForm() {
     supabase
       .from("messages")
       .insert([{ content: content }])
-      .then(function () {
-        console.log("That worked");
-      });
+      .then(function () {});
   }
   return (
     <form onSubmit={handleSubmit}>

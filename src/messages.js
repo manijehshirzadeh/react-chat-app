@@ -10,7 +10,6 @@ function Messages() {
       .then(function (data) {
         setMessages(data.body);
       });
-    console.log("The component was just rendered");
   }, []);
 
   useEffect(
@@ -19,7 +18,6 @@ function Messages() {
         .from("messages")
         .on("INSERT", function (payload) {
           setMessages([...messages, payload.new]);
-          console.log(payload);
         })
         .subscribe();
     },
